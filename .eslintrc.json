@@ -1,0 +1,13 @@
+{
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "no-undef": "off",
+    "no-unused-vars": "off",
+    "no-lonely-if": "error",
+    "no-unneeded-ternary": "error",
+    "array-callback-return": "off",
+    "prefer-const": "error",
+    "import/prefer-default-export": "off",
+    "react-hooks/exhaustive-deps": "off"
+  }
+}
