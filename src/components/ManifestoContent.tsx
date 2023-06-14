@@ -1,20 +1,16 @@
 import React from 'react'
-import { title, intro, principles, outro } from '@/data/manifesto'
+import { useRemarkSync } from 'react-remark'
+import ManifestoText from '@/data/manifesto'
+import SignButton from '@/components/SignButton'
 
 const ManifestoContent = () => {
   return (
-    <div>
-      <h1 className="mb-6 text-center text-4xl font-bold">{title}</h1>
-      <p className="mb-4">{intro}</p>
-      <ol className="list-outside list-decimal pl-7">
-        {principles.map((principle, index) => (
-          <li key={index} className="mb-4">
-            {principle}
-          </li>
-        ))}
-      </ol>
-      <p>{outro}</p>
-    </div>
+    <>
+      {useRemarkSync(ManifestoText)}
+      <div className="mt-8 flex justify-center">
+        <SignButton />
+      </div>
+    </>
   )
 }
 

@@ -1,5 +1,6 @@
 import '@/app/globals.scss'
 import { Anonymous_Pro } from 'next/font/google'
+import Nav from '@/components/Nav'
 
 const monospace = Anonymous_Pro({
   subsets: ['latin'],
@@ -21,7 +22,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${monospace.variable}`}>
-      <body>{children}</body>
+      <body className="py-12">
+        <div className="container flex min-h-screen flex-col items-center justify-between">
+          <Nav />
+          <main className="content mx-auto min-h-[29.7cm] w-[21cm] max-w-full bg-white p-[0.75cm] shadow-lg md:p-[1.5cm]">
+            {children}
+          </main>
+        </div>
+      </body>
     </html>
   )
 }
