@@ -4,27 +4,54 @@
 
 @layer base {
   html {
-    @apply bg-neutral-100 font-monospace;
-    font-size: 14px;
+    @apply bg-neutral-900 font-redacted-script;
   }
 }
 
 @layer components {
-  .content {
-    h1 {
-      @apply mb-8 text-center text-3xl font-bold;
+  .shootable-letter {
+    transform-origin: 85% 85%;
+
+    &.shot {
+      animation: animateShot 1s ease-in-out forwards;
+    }
+  }
+}
+
+@layer utilities {
+  .rotate-y {
+    &-90 {
+      transform: rotateY(90deg);
     }
 
-    p:not(:last-child) {
-      @apply mb-4;
+    &-180 {
+      transform: rotateY(180deg);
+    }
+  }
+
+  .rotate-x {
+    &-90 {
+      transform: rotateX(90deg);
     }
 
-    ol {
-      @apply mb-4 list-outside list-decimal pl-7;
-
-      li {
-        @apply mb-1;
-      }
+    &-180 {
+      transform: rotateX(180deg);
     }
+  }
+}
+
+@keyframes animateShot {
+  0% {
+    transform: rotate(0deg);
+    margin-top: 0;
+  }
+
+  50% {
+    margin-top: 0;
+  }
+
+  100% {
+    transform: rotate(-360deg);
+    margin-top: 100vh;
   }
 }

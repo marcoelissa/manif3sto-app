@@ -1,12 +1,46 @@
 import '@/app/globals.scss'
-import { Anonymous_Pro } from 'next/font/google'
-import Nav from '@/components/Nav'
+import { Press_Start_2P, Bangers, Libre_Barcode_39, Redacted_Script, Major_Mono_Display, Lilita_One } from 'next/font/google'
 
-const monospace = Anonymous_Pro({
+const pressStart2P = Press_Start_2P({
   subsets: ['latin'],
-  weight: ['400', '700'],
+  weight: ['400'],
   display: 'swap',
-  variable: '--font-monospace'
+  variable: '--font-press-start-2p'
+})
+
+const bangers = Bangers({
+  subsets: ['latin'],
+  weight: ['400'],
+  display: 'swap',
+  variable: '--font-bangers'
+})
+
+const libreBarcode39 = Libre_Barcode_39({
+  subsets: ['latin'],
+  weight: ['400'],
+  display: 'swap',
+  variable: '--font-libre-barcode-39'
+})
+
+const redactedScript = Redacted_Script({
+  subsets: ['latin'],
+  weight: ['400'],
+  display: 'swap',
+  variable: '--font-redacted-script'
+})
+
+const majorMonoDisplay = Major_Mono_Display({
+  subsets: ['latin'],
+  weight: ['400'],
+  display: 'swap',
+  variable: '--font-major-mono-display'
+})
+
+const lilitaOne = Lilita_One({
+  subsets: ['latin'],
+  weight: ['400'],
+  display: 'swap',
+  variable: '--font-lilita-one'
 })
 
 export const metadata = {
@@ -21,15 +55,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${monospace.variable}`}>
-      <body className="py-12">
-        <div className="container flex min-h-screen flex-col items-center justify-between">
-          <Nav />
-          <main className="content mx-auto min-h-[29.7cm] w-[21cm] max-w-full bg-white p-[0.75cm] shadow-lg md:p-[1.5cm]">
-            {children}
-          </main>
-        </div>
-      </body>
+    <html
+      lang="en"
+      className={`${pressStart2P.variable} ${bangers.variable} ${libreBarcode39.variable} ${redactedScript.variable} ${majorMonoDisplay.variable} ${lilitaOne.variable}`}
+    >
+      <body>{children}</body>
     </html>
   )
 }
