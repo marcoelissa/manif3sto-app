@@ -1,53 +1,11 @@
 import '@/app/globals.scss'
-import { Press_Start_2P, Bangers, Libre_Barcode_39, Redacted_Script, Major_Mono_Display, Lilita_One, Poppins } from 'next/font/google'
+import { Roboto } from 'next/font/google'
 
-const pressStart2P = Press_Start_2P({
+const roboto = Roboto({
   subsets: ['latin'],
-  weight: ['400'],
+  weight: ['400', '700'],
   display: 'swap',
-  variable: '--font-press-start-2p'
-})
-
-const bangers = Bangers({
-  subsets: ['latin'],
-  weight: ['400'],
-  display: 'swap',
-  variable: '--font-bangers'
-})
-
-const libreBarcode39 = Libre_Barcode_39({
-  subsets: ['latin'],
-  weight: ['400'],
-  display: 'swap',
-  variable: '--font-libre-barcode-39'
-})
-
-const redactedScript = Redacted_Script({
-  subsets: ['latin'],
-  weight: ['400'],
-  display: 'swap',
-  variable: '--font-redacted-script'
-})
-
-const majorMonoDisplay = Major_Mono_Display({
-  subsets: ['latin'],
-  weight: ['400'],
-  display: 'swap',
-  variable: '--font-major-mono-display'
-})
-
-const lilitaOne = Lilita_One({
-  subsets: ['latin'],
-  weight: ['400'],
-  display: 'swap',
-  variable: '--font-lilita-one'
-})
-
-const poppins = Poppins({
-  subsets: ['latin'],
-  weight: ['400', '700', '800', '900'],
-  display: 'swap',
-  variable: '--font-poppins'
+  variable: '--font-roboto'
 })
 
 export const metadata = {
@@ -64,7 +22,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${pressStart2P.variable} ${bangers.variable} ${libreBarcode39.variable} ${redactedScript.variable} ${majorMonoDisplay.variable} ${lilitaOne.variable} ${poppins.variable}`}
+      className={`${roboto.variable}`}
     >
       <body>{children}</body>
     </html>

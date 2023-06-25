@@ -17,7 +17,7 @@ const settings = {
 
 export const alchemy = new Alchemy(settings)
 
-export const getTokenboundAccount = async () => {
+export const getTBA: () => Promise<string> = async () => {
   const rpcUrl = `https://${settings.network}.g.alchemy.com/v2/${settings.apiKey}`
   const ethersProvider = new ethers.providers.JsonRpcProvider(rpcUrl)
   const accountAddress = await getAccount(
@@ -29,16 +29,20 @@ export const getTokenboundAccount = async () => {
   return accountAddress
 }
 
-export const getNftsForOwner = async (
+export const getNftsForTBA = async (
   address?: string,
   contractAddresses?: string[]
 ) => {
   if (!address) {
-    address = await getTokenboundAccount()
+    address = await getTBA()
   }
 
   const { ownedNfts } = await alchemy.nft.getNftsForOwner(address as string, {
     contractAddresses
   })
   return ownedNfts
+}
+
+export const shortAddress = (address: string) => {
+  return `${address.slice(0, 5)}...${address.slice(-4)}`
 }

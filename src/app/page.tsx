@@ -1,13 +1,10 @@
-import Title from '@/components/Title'
-import Grid from '@/components/Grid'
-import Nfts from '@/components/Nfts'
+import TokenboundAccount from '@/components/TokenboundAccount'
 
 const Home = () => {
   return (
-    <div className="h-screen w-full cursor-auto overflow-y-auto overflow-x-hidden">
-      <Title />
-      <Grid />
-      <Nfts />
+    <div className="relative mx-auto aspect-square h-screen overflow-hidden">
+      <iframe src="https://www.outreach.space/" width="100%" height="100%" />
+      <TokenboundAccount />
     </div>
   )
 }
