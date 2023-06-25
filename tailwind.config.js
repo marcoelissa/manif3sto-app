@@ -19,7 +19,8 @@ module.exports = {
       'libre-barcode-39': ['var(--font-libre-barcode-39)'],
       'redacted-script': ['var(--font-redacted-script)'],
       'major-mono-display': ['var(--font-major-mono-display)'],
-      'lilita-one': ['var(--font-lilita-one)']
+      'lilita-one': ['var(--font-lilita-one)'],
+      poppins: ['var(--font-poppins)']
     },
     extend: {
       cursor: {
@@ -31,14 +32,12 @@ module.exports = {
     }
   },
   plugins: [
-    plugin(function({ addUtilities }) {
-      addUtilities(
-        {
-          '.text-shadow': {
-            textShadow: '0.25rem 0.25rem 0 #000000'
-          }
+    plugin(function ({ addUtilities }) {
+      addUtilities({
+        '.text-shadow': {
+          textShadow: '0.25rem 0.25rem 0 #000000'
         }
-      )
+      })
     })
   ]
 }

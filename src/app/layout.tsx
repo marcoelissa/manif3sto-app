@@ -1,5 +1,5 @@
 import '@/app/globals.scss'
-import { Press_Start_2P, Bangers, Libre_Barcode_39, Redacted_Script, Major_Mono_Display, Lilita_One } from 'next/font/google'
+import { Press_Start_2P, Bangers, Libre_Barcode_39, Redacted_Script, Major_Mono_Display, Lilita_One, Poppins } from 'next/font/google'
 
 const pressStart2P = Press_Start_2P({
   subsets: ['latin'],
@@ -43,6 +43,13 @@ const lilitaOne = Lilita_One({
   variable: '--font-lilita-one'
 })
 
+const poppins = Poppins({
+  subsets: ['latin'],
+  weight: ['400', '700', '800', '900'],
+  display: 'swap',
+  variable: '--font-poppins'
+})
+
 export const metadata = {
   title: 'Web3 Manif3sto',
   description:
@@ -57,7 +64,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${pressStart2P.variable} ${bangers.variable} ${libreBarcode39.variable} ${redactedScript.variable} ${majorMonoDisplay.variable} ${lilitaOne.variable}`}
+      className={`${pressStart2P.variable} ${bangers.variable} ${libreBarcode39.variable} ${redactedScript.variable} ${majorMonoDisplay.variable} ${lilitaOne.variable} ${poppins.variable}`}
     >
       <body>{children}</body>
     </html>
